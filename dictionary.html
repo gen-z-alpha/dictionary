@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Alpha Dictionary</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .word-list {
+            margin-top: 20px;
+        }
+        .word-item {
+            margin: 10px 0;
+        }
+        .word-item a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #007bff;
+        }
+        .definition {
+            margin-top: 50px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        a.back-link {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function searchWords() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let words = document.getElementsByClassName('word-item');
+            for (let i = 0; i < words.length; i++) {
+                let wordText = words[i].getElementsByTagName('a')[0].innerText.toLowerCase();
+                if (wordText.includes(input)) {
+                    words[i].style.display = "";
+                } else {
+                    words[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Gen Alpha Dictionary</h1>
+    <input type="text" id="search" placeholder="Search for a word..." onkeyup="searchWords()">
+
+    <div class="word-list">
+        <div class="word-item"><a href="#womp-womp">Womp womp</a></div>
+        <div class="word-item"><a href="#gyat">Gyat</a></div>
+        <div class="word-item"><a href="#aura">Aura</a></div>
+        <div class="word-item"><a href="#sigma">Sigma</a></div>
+        <div class="word-item"><a href="#ohio">Ohio</a></div>
+        <div class="word-item"><a href="#rizz">Rizz</a></div>
+        <div class="word-item"><a href="#fanum-tax">Fanum tax</a></div>
+        <div class="word-item"><a href="#skibidi-toilet">Skibidi toilet</a></div>
+        <div class="word-item"><a href="#backrooms">Backrooms</a></div>
+        <div class="word-item"><a href="#goat">Goat</a></div>
+        <!-- Add more words here -->
+    </div>
+
+    <!-- Definitions section -->
+    <div class="definitions">
+        <div id="womp-womp" class="definition">
+            <h2>Womp womp</h2>
+            <p>"I don't care, sounds like a you problem."</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="gyat" class="definition">
+            <h2>Gyat</h2>
+            <p>Butt.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="aura" class="definition">
+            <h2>Aura</h2>
+            <p>What people think of you, with a higher aura being better.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="sigma" class="definition">
+            <h2>Sigma</h2>
+            <p>A good person.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="ohio" class="definition">
+            <h2>Ohio</h2>
+            <p>A place where weird things supposedly happen.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="rizz" class="definition">
+            <h2>Rizz</h2>
+            <p>Used in the context of "rizzing someone up," often a playful or cheesy compliment.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="fanum-tax" class="definition">
+            <h2>Fanum tax</h2>
+            <p>Taking something from someone.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="skibidi-toilet" class="definition">
+            <h2>Skibidi toilet</h2>
+            <p>A YouTube show about attacking toilets created by DaFuqBoom, with lore included.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="backrooms" class="definition">
+            <h2>Backrooms</h2>
+            <p>A concept of "no clipping" into an alternate dimension with monsters and various levels.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <div id="goat" class="definition">
+            <h2>Goat</h2>
+            <p>Greatest of all time, often used in football/soccer.</p>
+            <a href="#top" class="back-link">Back to top</a>
+        </div>
+
+        <!-- Add more definitions here -->
+    </div>
+
+</body>
+</html>
