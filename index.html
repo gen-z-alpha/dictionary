@@ -34,10 +34,10 @@
             color: #007bff;
         }
         .definition {
+            display: none; /* Hidden by default */
             margin-top: 50px;
             border-top: 1px solid #ccc;
             padding-top: 20px;
-            display: none; /* Hidden by default */
         }
         a.back-link {
             display: block;
@@ -48,33 +48,27 @@
         }
     </style>
     <script>
-        // Function to show a specific definition and hide the word list
-        function showDefinition(definitionId) {
-            // Hide the word list
-            document.getElementsByClassName('word-list')[0].style.display = 'none';
-
-            // Hide all other definitions
-            var definitions = document.getElementsByClassName('definition');
-            for (var i = 0; i < definitions.length; i++) {
-                definitions[i].style.display = 'none';
-            }
-
-            // Show the clicked definition
-            var selectedDefinition = document.getElementById(definitionId);
-            selectedDefinition.style.display = 'block';
-        }
-
-        // Function to show the word list again and hide all definitions
-        function showWordList() {
-            // Show the word list
-            document.getElementsByClassName('word-list')[0].style.display = 'block';
+        // Function to show the corresponding definition based on the URL fragment
+        function showDefinitionFromUrl() {
+            const fragment = window.location.hash.substring(1); // Get the number after '#'
+            const definitions = document.getElementsByClassName('definition');
 
             // Hide all definitions
-            var definitions = document.getElementsByClassName('definition');
-            for (var i = 0; i < definitions.length; i++) {
+            for (let i = 0; i < definitions.length; i++) {
                 definitions[i].style.display = 'none';
             }
+
+            // Show the corresponding definition based on the fragment
+            if (fragment) {
+                const definitionToShow = document.getElementById(`definition-${fragment}`);
+                if (definitionToShow) {
+                    definitionToShow.style.display = 'block';
+                }
+            }
         }
+
+        // Run the function when the page loads
+        window.onload = showDefinitionFromUrl;
     </script>
 </head>
 <body>
@@ -82,81 +76,80 @@
     <input type="text" id="search" placeholder="Search for a word..." onkeyup="searchWords()">
 
     <div class="word-list">
-        <div class="word-item"><a href="#womp-womp" onclick="showDefinition('womp-womp')">Womp womp</a></div>
-        <div class="word-item"><a href="#gyat" onclick="showDefinition('gyat')">Gyat</a></div>
-        <div class="word-item"><a href="#aura" onclick="showDefinition('aura')">Aura</a></div>
-        <div class="word-item"><a href="#sigma" onclick="showDefinition('sigma')">Sigma</a></div>
-        <div class="word-item"><a href="#ohio" onclick="showDefinition('ohio')">Ohio</a></div>
-        <div class="word-item"><a href="#rizz" onclick="showDefinition('rizz')">Rizz</a></div>
-        <div class="word-item"><a href="#fanum-tax" onclick="showDefinition('fanum-tax')">Fanum tax</a></div>
-        <div class="word-item"><a href="#skibidi-toilet" onclick="showDefinition('skibidi-toilet')">Skibidi toilet</a></div>
-        <div class="word-item"><a href="#backrooms" onclick="showDefinition('backrooms')">Backrooms</a></div>
-        <div class="word-item"><a href="#goat" onclick="showDefinition('goat')">Goat</a></div>
-        <!-- Add more words here -->
+        <div class="word-item"><a href="word/#1">Womp womp</a></div>
+        <div class="word-item"><a href="word/#2">Gyat</a></div>
+        <div class="word-item"><a href="word/#3">Aura</a></div>
+        <div class="word-item"><a href="word/#4">Sigma</a></div>
+        <div class="word-item"><a href="word/#5">Ohio</a></div>
+        <div class="word-item"><a href="word/#6">Rizz</a></div>
+        <div class="word-item"><a href="word/#7">Fanum tax</a></div>
+        <div class="word-item"><a href="word/#8">Skibidi toilet</a></div>
+        <div class="word-item"><a href="word/#9">Backrooms</a></div>
+        <div class="word-item"><a href="word/#10">Goat</a></div>
     </div>
 
-    <!-- Definitions section (hidden by default, displayed when clicked) -->
-    <div id="womp-womp" class="definition">
-        <h2>Womp womp</h2>
-        <p>"I don't care, sounds like a you problem."</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+    <!-- Definitions section -->
+    <div class="definitions">
+        <div id="definition-1" class="definition">
+            <h2>Womp womp</h2>
+            <p>"I don't care, sounds like a you problem."</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="gyat" class="definition">
-        <h2>Gyat</h2>
-        <p>Butt.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-2" class="definition">
+            <h2>Gyat</h2>
+            <p>Butt.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="aura" class="definition">
-        <h2>Aura</h2>
-        <p>What people think of you, with a higher aura being better.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-3" class="definition">
+            <h2>Aura</h2>
+            <p>What people think of you, with a higher aura being better.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="sigma" class="definition">
-        <h2>Sigma</h2>
-        <p>A good person.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-4" class="definition">
+            <h2>Sigma</h2>
+            <p>A good person.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="ohio" class="definition">
-        <h2>Ohio</h2>
-        <p>A place where weird things supposedly happen.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-5" class="definition">
+            <h2>Ohio</h2>
+            <p>A place where weird things supposedly happen.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="rizz" class="definition">
-        <h2>Rizz</h2>
-        <p>Used in the context of "rizzing someone up," often a playful or cheesy compliment.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-6" class="definition">
+            <h2>Rizz</h2>
+            <p>Used in the context of "rizzing someone up," often a playful or cheesy compliment.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="fanum-tax" class="definition">
-        <h2>Fanum tax</h2>
-        <p>Taking something from someone.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-7" class="definition">
+            <h2>Fanum tax</h2>
+            <p>Taking something from someone.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="skibidi-toilet" class="definition">
-        <h2>Skibidi toilet</h2>
-        <p>A YouTube show about attacking toilets created by DaFuqBoom, with lore included.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-8" class="definition">
+            <h2>Skibidi toilet</h2>
+            <p>A YouTube show about attacking toilets created by DaFuqBoom, with lore included.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="backrooms" class="definition">
-        <h2>Backrooms</h2>
-        <p>A concept of "no clipping" into an alternate dimension with monsters and various levels.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
-    </div>
+        <div id="definition-9" class="definition">
+            <h2>Backrooms</h2>
+            <p>A concept of "no clipping" into an alternate dimension with monsters and various levels.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
 
-    <div id="goat" class="definition">
-        <h2>Goat</h2>
-        <p>Greatest of all time, often used in football/soccer.</p>
-        <a href="#top" class="back-link" onclick="showWordList()">Back to top</a>
+        <div id="definition-10" class="definition">
+            <h2>Goat</h2>
+            <p>Greatest of all time, often used in football/soccer.</p>
+            <a href="#" class="back-link">Back to top</a>
+        </div>
     </div>
-
-    <!-- Add more definitions as needed -->
 
 </body>
 </html>
