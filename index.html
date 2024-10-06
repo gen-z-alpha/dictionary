@@ -80,4 +80,100 @@
 
             // Hide all definitions and show word list
             wordList.style.display = "block";
-            for (let i = 0; i <
+            for (let i = 0; i < definitions.length; i++) {
+                definitions[i].style.display = 'none';
+            }
+
+            // Clear the URL hash
+            window.location.hash = '';
+        }
+
+        // Event listener for URL changes
+        window.addEventListener('load', showDefinitionFromUrl);
+        window.addEventListener('hashchange', showDefinitionFromUrl);
+    </script>
+</head>
+<body>
+    <h1>Gen Alpha Dictionary</h1>
+    <input type="text" id="search" placeholder="Search for a word..." onkeyup="searchWords()">
+
+    <!-- Word List -->
+    <div class="word-list">
+        <div class="word-item"><a href="#1">Womp womp</a></div>
+        <div class="word-item"><a href="#2">Gyat</a></div>
+        <div class="word-item"><a href="#3">Aura</a></div>
+        <div class="word-item"><a href="#4">Sigma</a></div>
+        <div class="word-item"><a href="#5">Ohio</a></div>
+        <div class="word-item"><a href="#6">Rizz</a></div>
+        <div class="word-item"><a href="#7">Fanum tax</a></div>
+        <div class="word-item"><a href="#8">Skibidi toilet</a></div>
+        <div class="word-item"><a href="#9">Backrooms</a></div>
+        <div class="word-item"><a href="#10">Goat</a></div>
+        <!-- Add more words here as needed -->
+    </div>
+
+    <!-- Definitions -->
+    <div id="definition-1" class="definition">
+        <h2>Womp womp</h2>
+        <p>"I don't care, sounds like a you problem."</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-2" class="definition">
+        <h2>Gyat</h2>
+        <p>Butt.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-3" class="definition">
+        <h2>Aura</h2>
+        <p>What people think of you, with a higher aura being better.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-4" class="definition">
+        <h2>Sigma</h2>
+        <p>A good person.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-5" class="definition">
+        <h2>Ohio</h2>
+        <p>A place where weird things supposedly happen.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-6" class="definition">
+        <h2>Rizz</h2>
+        <p>Used in the context of "rizzing someone up," often a playful or cheesy compliment.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-7" class="definition">
+        <h2>Fanum tax</h2>
+        <p>Taking something from someone.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-8" class="definition">
+        <h2>Skibidi toilet</h2>
+        <p>A YouTube show about attacking toilets created by DaFuqBoom, with lore included.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-9" class="definition">
+        <h2>Backrooms</h2>
+        <p>A concept of "no clipping" into an alternate dimension with monsters and various levels.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <div id="definition-10" class="definition">
+        <h2>Goat</h2>
+        <p>Greatest of all time, often used in football/soccer.</p>
+        <a class="back-link" onclick="showWordList()">Go back</a>
+    </div>
+
+    <!-- Add more definitions as needed -->
+
+</body>
+</html>
