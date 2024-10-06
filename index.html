@@ -32,148 +32,364 @@
             text-decoration: none;
             font-size: 20px;
             color: #007bff;
-            cursor: pointer;
         }
         .definition {
-            display: none; /* Hidden by default */
             margin-top: 50px;
             border-top: 1px solid #ccc;
             padding-top: 20px;
+            display: none;
         }
         .back-link {
-            text-align: center;
             margin-top: 20px;
-            display: block;
-            font-size: 20px;
             color: #007bff;
+            text-align: center;
             text-decoration: none;
             cursor: pointer;
         }
     </style>
     <script>
-        // Function to show the corresponding definition based on the URL fragment
-        function showDefinitionFromUrl() {
-            const fragment = window.location.hash.substring(1); // Get the number after '#'
-            const definitions = document.getElementsByClassName('definition');
-            const wordList = document.querySelector('.word-list');
+        function showDefinition(id) {
+            let allDefinitions = document.querySelectorAll('.definition');
+            allDefinitions.forEach(def => def.style.display = 'none');
 
-            // Hide all definitions and show word list initially
-            wordList.style.display = "block";
-            for (let i = 0; i < definitions.length; i++) {
-                definitions[i].style.display = 'none';
-            }
+            let definition = document.getElementById(id);
+            definition.style.display = 'block';
 
-            // Show the corresponding definition based on the fragment
-            if (fragment) {
-                wordList.style.display = "none"; // Hide word list when showing a definition
-                const definitionToShow = document.getElementById(`definition-${fragment}`);
-                if (definitionToShow) {
-                    definitionToShow.style.display = 'block';
-                }
-            }
+            let wordList = document.querySelector('.word-list');
+            wordList.style.display = 'none';
         }
 
-        // Function to handle "Go Back" link and show the word list again
-        function showWordList() {
-            const wordList = document.querySelector('.word-list');
-            const definitions = document.getElementsByClassName('definition');
+        function goBack() {
+            let allDefinitions = document.querySelectorAll('.definition');
+            allDefinitions.forEach(def => def.style.display = 'none');
 
-            // Hide all definitions and show word list
-            wordList.style.display = "block";
-            for (let i = 0; i < definitions.length; i++) {
-                definitions[i].style.display = 'none';
-            }
-
-            // Clear the URL hash
-            window.location.hash = '';
+            let wordList = document.querySelector('.word-list');
+            wordList.style.display = 'block';
         }
-
-        // Event listener for URL changes
-        window.addEventListener('load', showDefinitionFromUrl);
-        window.addEventListener('hashchange', showDefinitionFromUrl);
     </script>
 </head>
 <body>
     <h1>Gen Alpha Dictionary</h1>
     <input type="text" id="search" placeholder="Search for a word..." onkeyup="searchWords()">
 
-    <!-- Word List -->
     <div class="word-list">
-        <div class="word-item"><a href="#1">Womp womp</a></div>
-        <div class="word-item"><a href="#2">Gyat</a></div>
-        <div class="word-item"><a href="#3">Aura</a></div>
-        <div class="word-item"><a href="#4">Sigma</a></div>
-        <div class="word-item"><a href="#5">Ohio</a></div>
-        <div class="word-item"><a href="#6">Rizz</a></div>
-        <div class="word-item"><a href="#7">Fanum tax</a></div>
-        <div class="word-item"><a href="#8">Skibidi toilet</a></div>
-        <div class="word-item"><a href="#9">Backrooms</a></div>
-        <div class="word-item"><a href="#10">Goat</a></div>
-        <!-- Add more words here as needed -->
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-1')">AF</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-2')">Bussin</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-3')">Cap</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-4')">Cheugy</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-5')">Clout</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-6')">Drip</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-7')">FOMO</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-8')">Flex</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-9')">G.O.A.T.</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-10')">Glow up</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-11')">Ghosted</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-12')">Hits different</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-13')">Karen</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-14')">Lit</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-15')">Lowkey</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-16')">Mood</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-17')">No cap</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-18')">OG</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-19')">Pookie</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-20')">Salty</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-21')">Savage</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-22')">Sheesh</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-23')">Simp</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-24')">Snack</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-25')">Swerve</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-26')">Tea</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-27')">Thirsty</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-28')">Vibe check</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-29')">VSCO girl</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-30')">Woke</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-31')">Zoned out</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-32')">Aesthetic</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-33')">Boujee</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-34')">Stan</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-35')">Flexitarian</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-36')">Szn</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-37')">Cringe</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-38')">Bet</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-39')">Karen</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-40')">Yeet</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-41')">Thirst trap</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-42')">Drip</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-43')">Simping</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-44')">Glow</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-45')">Deadass</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-46')">Lowkey</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-47')">Slay</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-48')">Finesse</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-49')">AFK</a></div>
+        <div class="word-item"><a href="javascript:void(0);" onclick="showDefinition('definition-50')">Simp</a></div>
     </div>
 
-    <!-- Definitions -->
-    <div id="definition-1" class="definition">
-        <h2>Womp womp</h2>
-        <p>"I don't care, sounds like a you problem."</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
+    <!-- Definitions section -->
+    <div class="definitions">
+        <div id="definition-1" class="definition">
+            <h2>AF</h2>
+            <p>Acronym for "as f***", used to emphasize something.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-2" class="definition">
+            <h2>Bussin</h2>
+            <p>Very good, usually describing food.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-3" class="definition">
+            <h2>Cap</h2>
+            <p>A lie or false statement.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-4" class="definition">
+            <h2>Cheugy</h2>
+            <p>Something that is outdated or trying too hard to be trendy.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-5" class="definition">
+            <h2>Clout</h2>
+            <p>Influence or power, especially in social media.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-6" class="definition">
+            <h2>Drip</h2>
+            <p>A stylish or fashionable look, especially in clothing.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-7" class="definition">
+            <h2>FOMO</h2>
+            <p>Fear of missing out; anxiety that one is missing out on social events.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-8" class="definition">
+            <h2>Flex</h2>
+            <p>To show off or boast about something.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-9" class="definition">
+            <h2>G.O.A.T.</h2>
+            <p>Greatest of all time; used to refer to someone who is the best in a field.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-10" class="definition">
+            <h2>Glow up</h2>
+            <p>A positive transformation or improvement in appearance or life.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-11" class="definition">
+            <h2>Ghosted</h2>
+            <p>To suddenly cut off all communication with someone.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-12" class="definition">
+            <h2>Hits different</h2>
+            <p>To feel stronger or more impactful than before.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-13" class="definition">
+            <h2>Karen</h2>
+            <p>A term for an entitled or demanding person, often a middle-aged woman.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-14" class="definition">
+            <h2>Lit</h2>
+            <p>Exciting, fun, or excellent.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-15" class="definition">
+            <h2>Lowkey</h2>
+            <p>Something done quietly or subtly.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-16" class="definition">
+            <h2>Mood</h2>
+            <p>A term to express that something resonates with one's feelings.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-17" class="definition">
+            <h2>No cap</h2>
+            <p>To be truthful; not lying.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-18" class="definition">
+            <h2>OG</h2>
+            <p>Original Gangster; someone who has been around for a long time.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-19" class="definition">
+            <h2>Pookie</h2>
+            <p>A cute nickname for someone special.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-20" class="definition">
+            <h2>Salty</h2>
+            <p>Upset or annoyed, often about something minor.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-21" class="definition">
+            <h2>Savage</h2>
+            <p>Bold, unapologetic, or fiercely independent.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-22" class="definition">
+            <h2>Sheesh</h2>
+            <p>Expression of amazement or disbelief.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-23" class="definition">
+            <h2>Simp</h2>
+            <p>A person who shows excessive sympathy and attention toward someone else.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-24" class="definition">
+            <h2>Snack</h2>
+            <p>Someone attractive.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-25" class="definition">
+            <h2>Swerve</h2>
+            <p>To avoid someone or something, often in a cool way.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-26" class="definition">
+            <h2>Tea</h2>
+            <p>Gossip or news; often used in the phrase "spill the tea."</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-27" class="definition">
+            <h2>Thirsty</h2>
+            <p>Desperate for attention or validation.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-28" class="definition">
+            <h2>Vibe check</h2>
+            <p>An assessment of the atmosphere or feelings of a place or situation.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-29" class="definition">
+            <h2>VSCO girl</h2>
+            <p>A trend where girls embrace a laid-back aesthetic, often with scrunchies and hydro flasks.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-30" class="definition">
+            <h2>Woke</h2>
+            <p>Being aware of and actively attentive to important societal issues.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-31" class="definition">
+            <h2>Zoned out</h2>
+            <p>To be mentally absent or distracted.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-32" class="definition">
+            <h2>Womp womp</h2>
+            <p>Expression of indifference or dismissal.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-33" class="definition">
+            <h2>Gyat</h2>
+            <p>Slang for someone's butt, often used in a complimentary way.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-34" class="definition">
+            <h2>Aura</h2>
+            <p>The vibe or impression a person gives off, often tied to their personality.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-35" class="definition">
+            <h2>Sigma</h2>
+            <p>A term for someone who is perceived as a lone wolf or independent thinker.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-36" class="definition">
+            <h2>Ohio</h2>
+            <p>A state often referenced in memes for its bizarre happenings.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-37" class="definition">
+            <h2>Rizz</h2>
+            <p>A term for charisma or charm, especially in flirting.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-38" class="definition">
+            <h2>Fanum tax</h2>
+            <p>A humorous term for taking something from someone.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-39" class="definition">
+            <h2>Skibidi toilet</h2>
+            <p>A viral YouTube series featuring animated toilets.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-40" class="definition">
+            <h2>Backrooms</h2>
+            <p>A concept referring to an endless maze of empty rooms, often used in creepypasta.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-41" class="definition">
+            <h2>Dog water</h2>
+            <p>Slang for something that is terrible or of low quality.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-42" class="definition">
+            <h2>Ick</h2>
+            <p>Refers to something that turns someone off or makes them cringe.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-43" class="definition">
+            <h2>L</h2>
+            <p>A term used to call someone a loser or to indicate failure.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-44" class="definition">
+            <h2>Pookiebear</h2>
+            <p>A sweet or affectionate term for someone beloved.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-45" class="definition">
+            <h2>OG</h2>
+            <p>Original Gangster; someone who has been around for a long time.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-46" class="definition">
+            <h2>Finesse</h2>
+            <p>To accomplish something in a clever or skillful way, often through manipulation.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-47" class="definition">
+            <h2>Slay</h2>
+            <p>To do something exceptionally well or to look fantastic.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-48" class="definition">
+            <h2>AFK</h2>
+            <p>Acronym for "away from keyboard"; used to indicate that someone is not present online.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
+        <div id="definition-49" class="definition">
+            <h2>Simp</h2>
+            <p>A person who shows excessive sympathy and attention toward someone else.</p>
+            <span class="back-link" onclick="goBack()">Go back</span>
+        </div>
     </div>
+</div>
 
-    <div id="definition-2" class="definition">
-        <h2>Gyat</h2>
-        <p>Butt.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
+<script>
+// Show definition when word is clicked
+function showDefinition(definitionId) {
+    const definitions = document.querySelectorAll('.definition');
+    definitions.forEach(def => def.style.display = 'none'); // Hide all definitions
+    document.getElementById(definitionId).style.display = 'block'; // Show the selected definition
+}
 
-    <div id="definition-3" class="definition">
-        <h2>Aura</h2>
-        <p>What people think of you, with a higher aura being better.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <div id="definition-4" class="definition">
-        <h2>Sigma</h2>
-        <p>A good person.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <div id="definition-5" class="definition">
-        <h2>Ohio</h2>
-        <p>A place where weird things supposedly happen.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <div id="definition-6" class="definition">
-        <h2>Rizz</h2>
-        <p>Used in the context of "rizzing someone up," often a playful or cheesy compliment.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <div id="definition-7" class="definition">
-        <h2>Fanum tax</h2>
-        <p>Taking something from someone.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <div id="definition-8" class="definition">
-        <h2>Skibidi toilet</h2>
-        <p>A YouTube show about attacking toilets created by DaFuqBoom, with lore included.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <div id="definition-9" class="definition">
-        <h2>Backrooms</h2>
-        <p>A concept of "no clipping" into an alternate dimension with monsters and various levels.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <div id="definition-10" class="definition">
-        <h2>Goat</h2>
-        <p>Greatest of all time, often used in football/soccer.</p>
-        <a class="back-link" onclick="showWordList()">Go back</a>
-    </div>
-
-    <!-- Add more definitions as needed -->
+// Go back to the word list
+function goBack() {
+    const definitions = document.querySelectorAll('.definition');
+    definitions.forEach(def => def.style.display = 'none'); // Hide all definitions
+    document.querySelector('.word-list').style.display = 'block'; // Show the word list again
+}
+</script>
 
 </body>
 </html>
