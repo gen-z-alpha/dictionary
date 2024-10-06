@@ -32,6 +32,7 @@
             text-decoration: none;
             font-size: 20px;
             color: #007bff;
+            cursor: pointer;
         }
         .definition {
             display: none; /* Hidden by default */
@@ -39,12 +40,14 @@
             border-top: 1px solid #ccc;
             padding-top: 20px;
         }
-        a.back-link {
-            display: block;
-            margin-top: 20px;
-            color: #007bff;
+        .back-link {
             text-align: center;
+            margin-top: 20px;
+            display: block;
+            font-size: 20px;
+            color: #007bff;
             text-decoration: none;
+            cursor: pointer;
         }
     </style>
     <script>
@@ -52,14 +55,17 @@
         function showDefinitionFromUrl() {
             const fragment = window.location.hash.substring(1); // Get the number after '#'
             const definitions = document.getElementsByClassName('definition');
+            const wordList = document.querySelector('.word-list');
 
-            // Hide all definitions
+            // Hide all definitions and show word list initially
+            wordList.style.display = "block";
             for (let i = 0; i < definitions.length; i++) {
                 definitions[i].style.display = 'none';
             }
 
             // Show the corresponding definition based on the fragment
             if (fragment) {
+                wordList.style.display = "none"; // Hide word list when showing a definition
                 const definitionToShow = document.getElementById(`definition-${fragment}`);
                 if (definitionToShow) {
                     definitionToShow.style.display = 'block';
@@ -67,89 +73,11 @@
             }
         }
 
-        // Run the function when the page loads
-        window.onload = showDefinitionFromUrl;
-    </script>
-</head>
-<body>
-    <h1>Gen Alpha Dictionary</h1>
-    <input type="text" id="search" placeholder="Search for a word..." onkeyup="searchWords()">
+        // Function to handle "Go Back" link and show the word list again
+        function showWordList() {
+            const wordList = document.querySelector('.word-list');
+            const definitions = document.getElementsByClassName('definition');
 
-    <div class="word-list">
-        <div class="word-item"><a href="#1">Womp womp</a></div>
-        <div class="word-item"><a href="#2">Gyat</a></div>
-        <div class="word-item"><a href="#3">Aura</a></div>
-        <div class="word-item"><a href="#4">Sigma</a></div>
-        <div class="word-item"><a href="#5">Ohio</a></div>
-        <div class="word-item"><a href="#6">Rizz</a></div>
-        <div class="word-item"><a href="#7">Fanum tax</a></div>
-        <div class="word-item"><a href="#8">Skibidi toilet</a></div>
-        <div class="word-item"><a href="#9">Backrooms</a></div>
-        <div class="word-item"><a href="#10">Goat</a></div>
-    </div>
-
-    <!-- Definitions section -->
-    <div class="definitions">
-        <div id="definition-1" class="definition">
-            <h2>Womp womp</h2>
-            <p>"I don't care, sounds like a you problem."</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-2" class="definition">
-            <h2>Gyat</h2>
-            <p>Butt.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-3" class="definition">
-            <h2>Aura</h2>
-            <p>What people think of you, with a higher aura being better.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-4" class="definition">
-            <h2>Sigma</h2>
-            <p>A good person.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-5" class="definition">
-            <h2>Ohio</h2>
-            <p>A place where weird things supposedly happen.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-6" class="definition">
-            <h2>Rizz</h2>
-            <p>Used in the context of "rizzing someone up," often a playful or cheesy compliment.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-7" class="definition">
-            <h2>Fanum tax</h2>
-            <p>Taking something from someone.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-8" class="definition">
-            <h2>Skibidi toilet</h2>
-            <p>A YouTube show about attacking toilets created by DaFuqBoom, with lore included.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-9" class="definition">
-            <h2>Backrooms</h2>
-            <p>A concept of "no clipping" into an alternate dimension with monsters and various levels.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-
-        <div id="definition-10" class="definition">
-            <h2>Goat</h2>
-            <p>Greatest of all time, often used in football/soccer.</p>
-            <a href="#" class="back-link">Back to top</a>
-        </div>
-    </div>
-
-</body>
-</html>
+            // Hide all definitions and show word list
+            wordList.style.display = "block";
+            for (let i = 0; i <
